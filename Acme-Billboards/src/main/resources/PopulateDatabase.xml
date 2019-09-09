@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- User accounts -->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="customer1" />
+		<property name="password" value="ffbc4675f864e0e9aab8bdf7a0437010" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="customer2" />
+		<property name="password" value="5ce4d191fd14ac85a1469fb8c29b7a7b" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="customer3" />
+		<property name="password" value="033f7f6121501ae98285ad77f216d5e7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="c240642ddef994358c96da82c0361a58" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="8df5127cd164b5bc2d2b78410a7eea0c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="manager3" />
+		<property name="password" value="2d3a5db4a2a9717b43698520a8de57d0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- ACTORS -->
+
+	<!-- ADMIN -->
+
+	<bean id="administrator" class="domain.Administrator">
+		<property name="name" value="Lucas" />
+		<property name="surname" value="Vázquez"/>
+		<property name="middleName" value="García"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="lucvazgar@mail.com" />
+		<property name="phone" value="623456789" />
+		<property name="address" value="calle Valencia nº10 2ºB" />
+		<property name="userAccount" ref="userAccount1" />
+	</bean>
+
+	<!-- CUSTOMER -->
+	
+	<bean id="customer1" class="domain.Customer">
+		<property name="name" value="Juan" />
+		<property name="surname" value="Parra" />
+		<property name="middleName" value="Serna"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="juaparser@mail.com" />
+		<property name="phone" value="623456789" />
+		<property name="address" value="Calle Cerro Blanco, 2" />
+		<property name="vatNumber" value="ASD12345678" />
+		<property name="userAccount" ref="userAccount2" />
+		<property name="creditCard" ref="creditCard1" />
+	</bean>
+	
+	<bean id="customer2" class="domain.Customer">
+		<property name="name" value="Cristina" />
+		<property name="surname" value="Sanabria" />
+		<property name="middleName" value="Gago"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="crisangag@mail.com" />
+		<property name="phone" value="623445289" />
+		<property name="address" value="Calle Portugal nº25" />
+		<property name="vatNumber" value="ASD12345678" />
+		<property name="userAccount" ref="userAccount3" />
+		<property name="creditCard" ref="creditCard2" />
+	</bean>
+	
+	<bean id="customer3" class="domain.Customer">
+		<property name="name" value="Pedro" />
+		<property name="surname" value="Martín" />
+		<property name="middleName" value="Chávez"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="pedmarcha@mail.com" />
+		<property name="phone" value="623456468" />
+		<property name="address" value="Calle Iglesia Santa nº15" />
+		<property name="vatNumber" value="ASD12345678" />
+		<property name="userAccount" ref="userAccount4" />
+		<property name="creditCard" ref="creditCard3" />
+	</bean>
+	
+	<!-- MANAGER -->
+	
+	<bean id="manager1" class="domain.Manager">
+		<property name="name" value="Javier" />
+		<property name="surname" value="Mulero"/>
+		<property name="middleName" value="Rivera"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="javmulriv@mail.com" />
+		<property name="phone" value="642556789" />
+		<property name="address" value="Avenida España nº3 1ºA" />
+		<property name="userAccount" ref="userAccount5" />
+	</bean>
+	
+	<bean id="manager2" class="domain.Manager">
+		<property name="name" value="Eva" />
+		<property name="surname" value="Gustos"/>
+		<property name="middleName" value="Pérez"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="email@mail.com" />
+		<property name="phone" value="623458239" />
+		<property name="address" value="Avenida Colón nº8 5ºC" />
+		<property name="userAccount" ref="userAccount6" />
+	</bean>
+	
+	<bean id="manager3" class="domain.Manager">
+		<property name="name" value="Jorge" />
+		<property name="surname" value="Pardo"/>
+		<property name="middleName" value="Barragán"/>
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="email" value="jorparbar@mail.com" />
+		<property name="phone" value="623454659" />
+		<property name="address" value="calle falsa 123" />
+		<property name="userAccount" ref="userAccount7" />
+	</bean>
+	
+	<!-- CREDIT CARDS -->
+
+	<bean id="creditCard1" class="domain.CreditCard">
+		<property name="holder" value="Juan Parra Serna" />
+		<property name="make" value="VISA" />
+		<property name="number" value="6601122145920192" />
+		<property name="expirationDate" value="2021/03/03 11:30" />
+		<property name="CVV" value="533" />
+	</bean>
+
+	<bean id="creditCard2" class="domain.CreditCard">
+		<property name="holder" value="Cristina Sanabria Gago" />
+		<property name="make" value="DINNERS" />
+		<property name="number" value="9584122145920192" />
+		<property name="expirationDate" value="2022/07/07 18:00" />
+		<property name="CVV" value="599" />
+	</bean>
+
+	<bean id="creditCard3" class="domain.CreditCard">
+		<property name="holder" value="Pedro Martín Chávez" />
+		<property name="make" value="VISA" />
+		<property name="number" value="6601122145922233" />
+		<property name="expirationDate" value="2020/02/15 16:00" />
+		<property name="CVV" value="996" />
+	</bean>
+	
+	<!-- FINDER -->
+
+	<bean id="finder1" class="domain.Finder">
+		<property name="customer" ref="customer1" />
+		<property name="packages">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="finder2" class="domain.Finder">
+		<property name="customer" ref="customer2" />
+		<property name="packages">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="finder3" class="domain.Finder">
+		<property name="customer" ref="customer3" />
+		<property name="packages">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<!-- PACKAGE -->
+	
+	<bean id="package1" class="domain.Package">
+		<property name="ticker" value="25LMD11-ASDFG" />
+		<property name="title" value="Title1" />
+		<property name="description" value="Description1" />
+		<property name="startMoment" value="2020/09/25 11:15" />
+		<property name="endMoment"   value="2021/10/30 18:10" />
+		<property name="price" value="54.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager1" />
+	</bean>
+	
+	<bean id="package2" class="domain.Package">
+		<property name="ticker" value="25LMD12-ASDFG" />
+		<property name="title" value="Title2" />
+		<property name="description" value="Description2" />
+		<property name="startMoment" value="2020/09/25 17:15" />
+		<property name="endMoment"   value="2022/10/30 19:30" />
+		<property name="price" value="256.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager2" />
+	</bean>
+	
+	<bean id="package3" class="domain.Package">
+		<property name="ticker" value="25LMD13-ASDFG" />
+		<property name="title" value="Title3" />
+		<property name="description" value="Description3" />
+		<property name="startMoment" value="2022/09/25 18:40" />
+		<property name="endMoment"   value="2023/10/30 19:20" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager3" />
+	</bean>
+	
+	<bean id="package4" class="domain.Package">
+		<property name="ticker" value="25LMD14-ASDFG" />
+		<property name="title" value="Title4" />
+		<property name="description" value="Description4" />
+		<property name="startMoment" value="2022/04/25 09:25" />
+		<property name="endMoment"   value="2023/07/30 08:35" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager1" />
+	</bean>
+	
+	<bean id="package5" class="domain.Package">
+		<property name="ticker" value="25LMD15-ASDFG" />
+		<property name="title" value="Title5" />
+		<property name="description" value="Description5" />
+		<property name="startMoment" value="2023/03/25 08:15" />
+		<property name="endMoment"   value="2023/11/30 21:55" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager2" />
+	</bean>
+	
+	<bean id="package6" class="domain.Package">
+		<property name="ticker" value="25LMD16-ASDFG" />
+		<property name="title" value="Title6" />
+		<property name="description" value="Description6" />
+		<property name="startMoment" value="2021/01/25 10:10" />
+		<property name="endMoment"   value="2021/12/30 13:50" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="false" />
+		<property name="manager" ref="manager3" />
+	</bean>
+	
+	<bean id="package7" class="domain.Package">
+		<property name="ticker" value="25LMD17-ASDFG" />
+		<property name="title" value="Title7" />
+		<property name="description" value="Description7" />
+		<property name="startMoment" value="2020/09/25 12:20" />
+		<property name="endMoment"   value="2020/10/30 21:10" />
+		<property name="price" value="124.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager1" />
+	</bean>
+	
+	<bean id="package8" class="domain.Package">
+		<property name="ticker" value="25LMD18-ASDFG" />
+		<property name="title" value="Title8" />
+		<property name="description" value="Description8" />
+		<property name="startMoment" value="2020/02/25 19:05" />
+		<property name="endMoment"   value="2020/07/30 20:55" />
+		<property name="price" value="967.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager2" />
+	</bean>
+	
+	<bean id="package9" class="domain.Package">
+		<property name="ticker" value="25LMD19-ASDFG" />
+		<property name="title" value="Title9" />
+		<property name="description" value="Description9" />
+		<property name="startMoment" value="2024/06/25 15:10" />
+		<property name="endMoment"   value="2025/12/30 19:45" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager3" />
+	</bean>
+	
+	<bean id="package10" class="domain.Package">
+		<property name="ticker" value="25LMD20-ASDFG" />
+		<property name="title" value="Title10" />
+		<property name="description" value="Description10" />
+		<property name="startMoment" value="2024/09/25 11:20" />
+		<property name="endMoment"   value="2025/10/30 16:30" />
+		<property name="price" value="124.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager1" />
+	</bean>
+	
+	<bean id="package11" class="domain.Package">
+		<property name="ticker" value="25LMD21-ASDFG" />
+		<property name="title" value="Title11" />
+		<property name="description" value="Description11" />
+		<property name="startMoment" value="2024/02/25 16:25" />
+		<property name="endMoment"   value="2024/07/30 17:15" />
+		<property name="price" value="967.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager2" />
+	</bean>
+	
+	<bean id="package12" class="domain.Package">
+		<property name="ticker" value="25LMD22-ASDFG" />
+		<property name="title" value="Title12" />
+		<property name="description" value="Description12" />
+		<property name="startMoment" value="2025/06/25 12:30" />
+		<property name="endMoment"   value="2025/12/30 18:40" />
+		<property name="price" value="545.5" />
+		<property name="photo" value="http://www.pinterest.com/asdllasd123.jpg" />
+		<property name="isDraft" value="true" />
+		<property name="manager" ref="manager3" />
+	</bean>
+	
+	<!-- FILE -->
+	
+	<bean id="file1" class="domain.File">
+		<property name="location" value="Location1" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract1" />
+	</bean>
+	
+	<bean id="file2" class="domain.File">
+		<property name="location" value="Location2" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract1" />
+	</bean>
+	
+	<bean id="file3" class="domain.File">
+		<property name="location" value="Location3" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract1" />
+	</bean>
+	
+	<bean id="file4" class="domain.File">
+		<property name="location" value="Location4" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract2" />
+	</bean>
+	
+	<bean id="file5" class="domain.File">
+		<property name="location" value="Location5" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract2" />
+	</bean>
+	
+	<bean id="file6" class="domain.File">
+		<property name="location" value="Location6" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract2" />
+	</bean>
+	
+	<bean id="file7" class="domain.File">
+		<property name="location" value="Location7" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract3" />
+	</bean>
+	
+	<bean id="file8" class="domain.File">
+		<property name="location" value="Location8" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract3" />
+	</bean>
+	
+	<bean id="file9" class="domain.File">
+		<property name="location" value="Location9" />
+		<property name="image" value="http://www.pinterest.com/asdllasd123.jpg"/>
+		<property name="contract" ref="contract3" />
+	</bean>
+	
+	<!-- CONTRACT -->
+	
+	<bean id="contract1" class="domain.Contract">
+		<property name="text" value="25LMD14-ASDFG Text4 Description4" />
+		<property name="hash" value="d41d8cd98f00b204e9800998ecf8427e" />
+		<property name="signCustomer" value="Juan Parra Serna"     />
+		<property name="signManager"  value="Javier Mulero Rivera" />
+		<property name="momentCustomer" value="2016/01/25 15:10" />
+		<property name="momentManager"  value="2017/12/30 15:10" />
+		<property name="pakage" ref="package4" />
+		<property name="status" value="FINAL"  />
+		<property name="files">
+			<list>
+				<ref bean="file1" />
+				<ref bean="file2" />
+				<ref bean="file3" />
+			</list>
+		</property>
+	</bean> 
+	
+	<bean id="contract2" class="domain.Contract">
+		<property name="text" value="25LMD15-ASDFG Text5 Description5" />
+		<property name="hash" value="d41d8cd98f00b204e9800998ecf8427e" />
+		<property name="signCustomer" value="Cristina Sanabria Gago" />
+		<property name="signManager"  value="Eva Gustos Pérez"       />
+		<property name="momentCustomer" value="2016/01/25 15:10" />
+		<property name="momentManager"  value="2017/12/30 15:10" />
+		<property name="pakage" ref="package5" />
+		<property name="status" value="FINAL" />
+		<property name="files">
+			<list>
+				<ref bean="file4" />
+				<ref bean="file5" />
+				<ref bean="file6" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="contract3" class="domain.Contract">
+		<property name="text" value="25LMD16-ASDFG Text6 Description6" />
+		<property name="hash" value="d41d8cd98f00b204e9800998ecf8427e" />
+		<property name="signCustomer" value="Pedro Martín Chávez"  />
+		<property name="signManager"  value="Jorge Pardo Barragán" />
+		<property name="momentCustomer" value="2016/01/25 15:10" />
+		<property name="momentManager"  value="2017/12/30 15:10" />
+		<property name="pakage" ref="package6" />
+		<property name="status" value="FINAL" />
+		<property name="files">
+			<list>
+				<ref bean="file7" />
+				<ref bean="file8" />
+				<ref bean="file9" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- REQUESTS -->
+
+	<bean id="request1" class="domain.Request">
+		<property name="status" value="PENDING" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer1" />
+		<property name="pakage" ref="package1" />
+	</bean>
+
+	<bean id="request2" class="domain.Request">
+		<property name="status" value="PENDING" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer2" />
+		<property name="pakage" ref="package2" />
+	</bean>
+
+	<bean id="request3" class="domain.Request">
+		<property name="status" value="PENDING" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer3" />
+		<property name="pakage" ref="package3" />
+	</bean>
+
+	<bean id="request4" class="domain.Request">
+		<property name="status" value="APPROVED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer1" />
+		<property name="contract" ref="contract1" />
+		<property name="pakage" ref="package4" />
+	</bean>
+
+	<bean id="request5" class="domain.Request">
+		<property name="status" value="APPROVED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer2" />
+		<property name="contract" ref="contract2" />
+		<property name="pakage" ref="package5" />
+	</bean>
+
+	<bean id="request6" class="domain.Request">
+		<property name="status" value="APPROVED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer3" />
+		<property name="contract" ref="contract3" />
+		<property name="pakage" ref="package6" />
+	</bean>
+
+	<bean id="request7" class="domain.Request">
+		<property name="status" value="REJECTED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer1" />
+		<property name="pakage" ref="package1" />
+	</bean>
+
+	<bean id="request8" class="domain.Request">
+		<property name="status" value="REJECTED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer2" />
+		<property name="pakage" ref="package2" />
+	</bean>
+
+	<bean id="request9" class="domain.Request">
+		<property name="status" value="REJECTED" />
+		<property name="commentsCustomer">
+			<list>
+			<value>commentCustomer1</value>
+			<value>commentCustomer2</value>
+			<value>commentCustomer3</value>
+			</list>
+		</property>
+		<property name="commentsManager">
+			<list>
+			<value>commentManager1</value>
+			<value>commentManager2</value>
+			<value>commentManager3</value>
+			</list>
+		</property>
+		<property name="customer" ref="customer3" />
+		<property name="pakage" ref="package3" />
+	</bean>
+	
+	<!-- CONFIGURATION -->
+
+	<bean id="configuration1" class="domain.Configuration">
+		<property name="banner" value="https://tinyurl.com/acme-billboards" />
+		<property name="finderCacheTime" value="1" />
+		<property name="vatPercentage"  value="21" />
+		<property name="defaultPhoneCode"  value="+34" />
+		<property name="finderQueryResults" value="10" />
+		<property name="systemName" value="Acme Billboards" />
+		<property name="welcomeTextEnglish" value="Welcome to Acme Billboards, Advertise with us for a lot less than you think it might cost!" />
+		<property name="welcomeTextSpanish" value="¡Bienvenidos a Acme Billboards! Publicítese con nosotros por mucho menos de los que piensa." />
+	</bean>
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd		
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<util:list id="converters">
+			<bean class="converters.AuthorityToStringConverter" />
+			<bean class="converters.AdministratorToStringConverter" />
+			<bean class="converters.ContractToStringConverter" />
+			<bean class="converters.CustomerToStringConverter" />
+			<bean class="converters.FileToStringConverter"  />
+			<bean class="converters.ActorToStringConverter" />
+			<bean class="converters.FinderToStringConverter"  />
+			<bean class="converters.ManagerToStringConverter" />
+			<bean class="converters.PackageToStringConverter" />
+			<bean class="converters.RequestToStringConverter" />
+			
+			<bean class="converters.StringToAuthorityConverter" />
+			<bean class="converters.StringToAdministratorConverter" />
+			<bean class="converters.StringToContractConverter" />
+			<bean class="converters.StringToCustomerConverter" />
+			<bean class="converters.StringToFileConverter"  />
+			<bean class="converters.StringToActorConverter" />
+			<bean class="converters.StringToFinderConverter"  />
+			<bean class="converters.StringToManagerConverter" />
+			<bean class="converters.StringToPackageConverter" />
+			<bean class="converters.StringToRequestConverter" />
+	</util:list>
+	
+</beans>

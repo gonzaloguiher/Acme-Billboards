@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="actor/registerAdministrator" extends="master.page">	
+		<put-attribute name="title" value="Crear un nuevo administrador" />
+		<put-attribute name="body" value="/views/actor/registerAdministrator.jsp" />
+	</definition>
+	
+	<definition name="actor/registerCustomer" extends="master.page">	
+		<put-attribute name="title" value="Crear un nuevo cliente" />
+		<put-attribute name="body" value="/views/actor/registerCustomer.jsp" />
+	</definition>
+	
+	<definition name="actor/registerManager" extends="master.page">	
+		<put-attribute name="title" value="Crear un nuevo gerente" />
+		<put-attribute name="body" value="/views/actor/registerManager.jsp" />
+	</definition>
+	
+	<definition name="actor/show" extends="master.page">	
+		<put-attribute name="title" value="Mostrar perfil" />
+		<put-attribute name="body" value="/views/actor/show.jsp" />
+	</definition>
+	
+	<definition name="actor/edit" extends="master.page">	
+		<put-attribute name="title" value="Editar perfil" />
+		<put-attribute name="body" value="/views/actor/edit.jsp" />
+	</definition>
+	
+	<definition name="actor/personalData" extends="master.page">	
+		<put-attribute name="title" value="Personal Data" />
+		<put-attribute name="body" value="/views/actor/personalData.jsp" />
+	</definition>
+
+	
+</tiles-definitions>

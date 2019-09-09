@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="package/list" extends="master.page">
+		<put-attribute name="title" value="Lista de paquetes" />
+		<put-attribute name="body" value="/views/package/list.jsp" />
+	</definition>
+
+	<definition name="package/edit" extends="master.page">
+		<put-attribute name="title" value="Editar paquete" />
+		<put-attribute name="body" value="/views/package/edit.jsp" />
+	</definition>
+	
+	<definition name="package/show" extends="master.page">	
+		<put-attribute name="title" value="Mostrar paquete" />
+		<put-attribute name="body" value="/views/package/show.jsp" />
+	</definition>
+
+</tiles-definitions>
